@@ -1,0 +1,21 @@
+{
+  "name": "video-cambio",
+  "version": "1.0.0",
+  "description": "Apply filters and effects to videos",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "video",
+    "filters",
+    "effects",
+    "ffmpeg"
+  ],
+  "author": "Erick Smith <smith.s.erick@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "child-process-promise": "^2.2.1",
+    "fluent-ffmpeg": "^2.1.2"
+  }
+}
