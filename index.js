@@ -48,6 +48,7 @@ videoCamdio.glow = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-vf",
@@ -67,6 +68,7 @@ videoCamdio.sepia = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-filter_complex",
@@ -86,6 +88,7 @@ videoCamdio.bAndWhite = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-vf",
@@ -105,6 +108,7 @@ videoCamdio.vertigo = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-vf",
@@ -124,6 +128,7 @@ videoCamdio.sobel = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-vf",
@@ -143,6 +148,7 @@ videoCamdio.vignette = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-vf",
@@ -162,6 +168,7 @@ videoCamdio.pixeliz0r = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-vf",
@@ -181,6 +188,7 @@ videoCamdio.invert0r = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-vf",
@@ -200,6 +208,7 @@ videoCamdio.rbgNoise = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-vf",
@@ -219,6 +228,7 @@ videoCamdio.distort0r = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-vf",
@@ -238,6 +248,7 @@ videoCamdio.blur = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-vf",
@@ -257,6 +268,7 @@ videoCamdio.nervous = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-vf",
@@ -276,6 +288,7 @@ videoCamdio.reverse = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-vf",
@@ -295,6 +308,7 @@ videoCamdio.slowdown = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-filter:v",
@@ -314,6 +328,7 @@ videoCamdio.speedup = (inputVid, outputPath = "output.mp4") => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
+        "-y",
         "-i",
         inputVid,
         "-filter:v",
