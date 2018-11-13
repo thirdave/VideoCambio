@@ -41,3 +41,5 @@ const videoCambio = require('video-cambio');
 * reverse
 * slowdown
 * speedup
+* overlay (takes a 3rd parameter of an image-path)
+* boomerrang

@@ -343,4 +343,50 @@ videoCambio.speedup = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
+videoCambio.overlay = (inputVid, outputPath = "output.mp4", imagePath) => {
+  new Promise(async (resolve, reject) => {
+    try {
+      await ensurePath(outputPath);
+      const promise = spawn("ffmpeg", [
+        "-y",
+        "-i",
+        inputVid,
+        "-i",
+        imagePath,
+        "-filter_complex",
+        "[0:v][1:v] overlay=0:0'",
+        "-pix_fmt",
+        "yuv420p",
+        "-c:a",
+        "copy",
+        outputPath
+      ]);
+      await streamProcess(promise);
+      resolve();
+    } catch (err) {
+      reject(Error(err));
+    }
+  });
+};
+
+videoCambio.boomerrang = (inputVid, outputPath = "output.mp4") => {
+  new Promise(async (resolve, reject) => {
+    try {
+      await ensurePath(outputPath);
+      const promise = spawn("ffmpeg", [
+        "-y",
+        "-i",
+        inputVid,
+        "-filter_complex",
+        "[0]reverse[r];[0][r]concat,setpts=0.5*PTS",
+        outputPath
+      ]);
+      await streamProcess(promise);
+      resolve();
+    } catch (err) {
+      reject(Error(err));
+    }
+  });
+};
+
 module.exports = videoCambio;
