@@ -1,7 +1,7 @@
 const { spawn, exec } = require("child-process-promise");
 var fs = require("fs");
 
-const videoCamdio = {};
+const videoCambio = {};
 
 const ensurePath = async outputPath => {
   try {
@@ -43,7 +43,7 @@ const streamProcess = promise =>
       });
   });
 
-videoCamdio.glow = (inputVid, outputPath = "output.mp4") => {
+videoCambio.glow = (inputVid, outputPath = "output.mp4") => {
   return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -63,7 +63,7 @@ videoCamdio.glow = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-videoCamdio.sepia = (inputVid, outputPath = "output.mp4") => {
+videoCambio.sepia = (inputVid, outputPath = "output.mp4") => {
   new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -83,7 +83,7 @@ videoCamdio.sepia = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-videoCamdio.bAndWhite = (inputVid, outputPath = "output.mp4") => {
+videoCambio.bAndWhite = (inputVid, outputPath = "output.mp4") => {
   new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -103,7 +103,7 @@ videoCamdio.bAndWhite = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-videoCamdio.vertigo = (inputVid, outputPath = "output.mp4") => {
+videoCambio.vertigo = (inputVid, outputPath = "output.mp4") => {
   new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -123,7 +123,7 @@ videoCamdio.vertigo = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-videoCamdio.sobel = (inputVid, outputPath = "output.mp4") => {
+videoCambio.sobel = (inputVid, outputPath = "output.mp4") => {
   new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -143,7 +143,7 @@ videoCamdio.sobel = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-videoCamdio.vignette = (inputVid, outputPath = "output.mp4") => {
+videoCambio.vignette = (inputVid, outputPath = "output.mp4") => {
   new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -163,7 +163,7 @@ videoCamdio.vignette = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-videoCamdio.pixeliz0r = (inputVid, outputPath = "output.mp4") => {
+videoCambio.pixeliz0r = (inputVid, outputPath = "output.mp4") => {
   new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -183,7 +183,7 @@ videoCamdio.pixeliz0r = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-videoCamdio.invert0r = (inputVid, outputPath = "output.mp4") => {
+videoCambio.invert0r = (inputVid, outputPath = "output.mp4") => {
   new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -203,7 +203,7 @@ videoCamdio.invert0r = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-videoCamdio.rbgNoise = (inputVid, outputPath = "output.mp4") => {
+videoCambio.rbgNoise = (inputVid, outputPath = "output.mp4") => {
   new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -223,7 +223,7 @@ videoCamdio.rbgNoise = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-videoCamdio.distort0r = (inputVid, outputPath = "output.mp4") => {
+videoCambio.distort0r = (inputVid, outputPath = "output.mp4") => {
   new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -243,7 +243,7 @@ videoCamdio.distort0r = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-videoCamdio.blur = (inputVid, outputPath = "output.mp4") => {
+videoCambio.blur = (inputVid, outputPath = "output.mp4") => {
   new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -263,7 +263,7 @@ videoCamdio.blur = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-videoCamdio.nervous = (inputVid, outputPath = "output.mp4") => {
+videoCambio.nervous = (inputVid, outputPath = "output.mp4") => {
   new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -283,7 +283,7 @@ videoCamdio.nervous = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-videoCamdio.reverse = (inputVid, outputPath = "output.mp4") => {
+videoCambio.reverse = (inputVid, outputPath = "output.mp4") => {
   new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -303,7 +303,7 @@ videoCamdio.reverse = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-videoCamdio.slowdown = (inputVid, outputPath = "output.mp4") => {
+videoCambio.slowdown = (inputVid, outputPath = "output.mp4") => {
   new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -323,7 +323,7 @@ videoCamdio.slowdown = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-videoCamdio.speedup = (inputVid, outputPath = "output.mp4") => {
+videoCambio.speedup = (inputVid, outputPath = "output.mp4") => {
   new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
@@ -343,4 +343,4 @@ videoCamdio.speedup = (inputVid, outputPath = "output.mp4") => {
   });
 };
 
-module.exports = videoCamdio;
+module.exports = videoCambio;
