@@ -10,7 +10,10 @@
     "video",
     "filters",
     "effects",
-    "ffmpeg"
+    "ffmpeg",
+    "change",
+    "video-cambio",
+    "videoCambio"
   ],
   "author": "Erick Smith <smith.s.erick@gmail.com>",
   "license": "MIT",
