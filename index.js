@@ -378,7 +378,7 @@ videoCambio.boomerrang = (inputVid, outputPath = "output.mp4") => {
         "-i",
         inputVid,
         "-filter_complex",
-        "[0]reverse[r];[0][r]concat,setpts=0.5*PTS",
+        "[0]reverse[r];[0][r]concat,loop=loop=1:size=10000,setpts=0.5*PTS",
         outputPath
       ]);
       await streamProcess(promise);
