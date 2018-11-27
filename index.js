@@ -19,8 +19,8 @@ const ensurePath = async outputPath => {
   }
 };
 
-const streamProcess = promise =>
-  new Promise((resolve, reject) => {
+const streamProcess = promise => {
+  return new Promise((resolve, reject) => {
     const childProcess = promise.childProcess;
 
     console.log("childProcess.pid: ", childProcess.pid);
@@ -36,12 +36,13 @@ const streamProcess = promise =>
 
     promise
       .then(function() {
-        resolve();
+        resolve("done");
       })
       .catch(function(err) {
         reject(err);
       });
   });
+};
 
 videoCambio.glow = (inputVid, outputPath = "output.mp4") => {
   return new Promise(async (resolve, reject) => {
@@ -56,7 +57,7 @@ videoCambio.glow = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -64,7 +65,7 @@ videoCambio.glow = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.sepia = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -76,7 +77,7 @@ videoCambio.sepia = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -84,7 +85,7 @@ videoCambio.sepia = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.bAndWhite = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -96,7 +97,7 @@ videoCambio.bAndWhite = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -104,7 +105,7 @@ videoCambio.bAndWhite = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.vertigo = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -116,7 +117,7 @@ videoCambio.vertigo = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -124,7 +125,7 @@ videoCambio.vertigo = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.sobel = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -136,7 +137,7 @@ videoCambio.sobel = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -144,7 +145,7 @@ videoCambio.sobel = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.vignette = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -156,7 +157,7 @@ videoCambio.vignette = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -164,7 +165,7 @@ videoCambio.vignette = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.pixeliz0r = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -176,7 +177,7 @@ videoCambio.pixeliz0r = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -184,7 +185,7 @@ videoCambio.pixeliz0r = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.invert0r = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -196,7 +197,7 @@ videoCambio.invert0r = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -204,7 +205,7 @@ videoCambio.invert0r = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.rbgNoise = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -216,7 +217,7 @@ videoCambio.rbgNoise = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -224,7 +225,7 @@ videoCambio.rbgNoise = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.distort0r = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -236,7 +237,7 @@ videoCambio.distort0r = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -244,7 +245,7 @@ videoCambio.distort0r = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.blur = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -256,7 +257,7 @@ videoCambio.blur = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -264,7 +265,7 @@ videoCambio.blur = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.nervous = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -276,7 +277,7 @@ videoCambio.nervous = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -284,7 +285,7 @@ videoCambio.nervous = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.reverse = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -296,7 +297,7 @@ videoCambio.reverse = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -304,7 +305,7 @@ videoCambio.reverse = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.slowdown = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -316,7 +317,7 @@ videoCambio.slowdown = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -324,7 +325,7 @@ videoCambio.slowdown = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.speedup = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -336,7 +337,7 @@ videoCambio.speedup = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -344,7 +345,7 @@ videoCambio.speedup = (inputVid, outputPath = "output.mp4") => {
 };
 
 videoCambio.overlay = (inputVid, outputPath = "output.mp4", imagePath) => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -362,7 +363,7 @@ videoCambio.overlay = (inputVid, outputPath = "output.mp4", imagePath) => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
@@ -370,7 +371,7 @@ videoCambio.overlay = (inputVid, outputPath = "output.mp4", imagePath) => {
 };
 
 videoCambio.boomerrang = (inputVid, outputPath = "output.mp4") => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       await ensurePath(outputPath);
       const promise = spawn("ffmpeg", [
@@ -382,7 +383,7 @@ videoCambio.boomerrang = (inputVid, outputPath = "output.mp4") => {
         outputPath
       ]);
       await streamProcess(promise);
-      resolve();
+      resolve(outputPath);
     } catch (err) {
       reject(Error(err));
     }
